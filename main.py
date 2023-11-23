@@ -51,7 +51,9 @@ def make_request_with_tor(url):
         return response.text
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error using Tor proxy: {e}")
-
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 @app.get("/tor-request")
 async def tor_request():
     url_to_request = 'https://api.ipify.org?format=json'
