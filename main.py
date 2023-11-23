@@ -26,10 +26,10 @@ def install_and_start_tor():
                 torrc_content = torrc_file.read()
                 print(torrc_content)
         # Start Tor service
-        sh.bash("-c","service tor start")
+        # sh.bash("-c","service tor start")
 
         # Wait for Tor to start (you may adjust the sleep duration)
-        time.sleep(5)
+        # time.sleep(5)
         # sh.bash("-c","service tor stop")
         a = sh.bash("-c","service tor status")
         print(a)
